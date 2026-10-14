@@ -1,0 +1,71 @@
+---
+title: "GA4-1 - GP Analytics Blueprint"
+subtitle: "Measurement and Tracking Plan"
+
+author:
+  - name: "Luis Ahumada"
+  - name: "Spencer Conway"
+  - name: "Carmen Jimenez"
+  - name: "Leeann Lewis-Waddell"
+  - name: "Georgia Monjarrez"
+
+date: today
+date-format: "MMMM D, YYYY"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "Contents"
+    toc-location: left
+    toc-depth: 1
+    number-sections: true
+    smooth-scroll: true
+    embed-resources: true
+    page-layout: article
+    mainfont: "Arial"
+    fontsize: 1em
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+editor: source
+---
+
+# GP Analytics Blueprint
+
+## 1. Analytics Blueprint
+
+## Client Context
+
+#### Stakeholder Question 1
+
+#### Stakeholder Question 2
+
+#### Stakeholder Question 3
+
+#### Stakeholder Question 4
+
+#### Stakeholder Question 5
+
+## 2. KPI Tree / Metric Hierarchy
+
+#### North Star Outcome
+
+#### KPI Tree Diagram
+
+#### Diagnostic Dimensions
+
+## 3. Event / Parameter Map
+
+\[Insert Event / Parameter Map Here\]
+
+## 4. Validation Checklist and Test Cases
+
+#### Validation Checklist
+
+#### Test Cases
+
+\[Insert six test cases here\]
