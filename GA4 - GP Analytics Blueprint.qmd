@@ -44,15 +44,15 @@ editor: source
 
 How does moving the ‘Reserve a Table’ button to the upper left of RKR’s Collins Concierge section affect reservation clicks and bookings?
 
-- **KPIs:** Newsletter sessions; reservation click rate
+-   **KPIs:** Newsletter sessions; reservation click rate
 
-- **Definitions:** Newsletter sessions = GA4 sessions with source `collins_concierge_[position]` / medium `email`. Reservation click rate = `reserve_click` events ÷ newsletter sessions × 100.
+-   **Definitions:** Newsletter sessions = GA4 sessions with source `collins_concierge_[position]` / medium `email`. Reservation click rate = `reserve_click` events ÷ newsletter sessions × 100.
 
-- **Breakdowns:** Button position, issue date, device
+-   **Breakdowns:** Button position, issue date, device
 
-- **Data source:** GA4 via Data Studio; Canva for issue views
+-   **Data source:** GA4 via Data Studio; Canva for issue views
 
-- **Notes:** Links must be UTM-tagged in Canva and point to an RKR page. `reserve_click` is not tracked today (see D3). First tagged issues serve as the baseline.
+-   **Notes:** Links must be UTM-tagged in Canva and point to an RKR page. `reserve_click` is not tracked today (see D3). First tagged issues serve as the baseline.
 
 #### Stakeholder Question 2
 
@@ -62,43 +62,79 @@ Which Facebook content and messaging strategies are associated with stronger eng
 
 **KPI's:**
 
-- Facebook Engagement Rate
+-   Facebook Engagement Rate
 
-- Facebook Post Link Clicks
+-   Facebook Post Link Clicks
 
-- OpenTable Reservation Activity
+-   OpenTable Reservation Activity
 
 **Definitions:**
 
-- Facebook Engagement Rate: Measure the percentage of Facebook views/impressions that result in engagement
+-   Facebook Engagement Rate: Measure the percentage of Facebook views/impressions that result in engagement
 
-- Formula: Total Engagement ÷ Views/Impressions x 100
+-   Formula: Total Engagement ÷ Views/Impressions x 100
 
-- Post Link Clicks: Number of clicks on links included in Facebook posts
+-   Post Link Clicks: Number of clicks on links included in Facebook posts
 
-- OpenTable Reservation Activity: Number of reservations recorded in OpenTable during the same measurement period
+-   OpenTable Reservation Activity: Number of reservations recorded in OpenTable during the same measurement period
 
 **Breakdown:**
 
-- Content strategy; messaging strategy; corresponding OpenTable reservation period
+-   Content strategy; messaging strategy; corresponding OpenTable reservation period
 
 **Data Source:**
 
-- Sprout Social/ Facebook performance data
+-   Sprout Social/ Facebook performance data
 
-- OpenTable reservation data
+-   OpenTable reservation data
 
 **Notes:**
 
-- Facebook posts will be categorized by content and messaging strategy and will be compared using engagement rate and post link clicks. The current data already provides post-level Facebook performance metrics that includes engagements and engagement rates.
+-   Facebook posts will be categorized by content and messaging strategy and will be compared using engagement rate and post link clicks. The current data already provides post-level Facebook performance metrics that includes engagements and engagement rates.
 
-- OpenTable reservation activity will be compared with Facebook performance over the same time periods. If direct tracking is available, reservations may be tied to Facebook; otherwise, the analysis will focus on association rather than causation.
+-   OpenTable reservation activity will be compared with Facebook performance over the same time periods. If direct tracking is available, reservations may be tied to Facebook; otherwise, the analysis will focus on association rather than causation.
 
 #### Stakeholder Question 4
 
 How effectively does the RKR website encourage visitors to explore its menu and dining options?
 
 #### Stakeholder Question 5
+
+Which Instagram content and messages get more engagement and reservation-link clicks?
+
+**KPIs:**
+
+-   Instagram Engagement Rate
+
+-   Instagram Sessions
+
+-   Reservation Click Rate
+
+**Definitions:**
+
+-   Engagement Rate: (Likes + Comments + Saves + Shares) ÷ Reach × 100 per post. Average the rates for each content category.
+
+-   Instagram Sessions: GA4 sessions with source `instagram` / medium `organic_social`.
+
+-   Reservation Click Rate: Instagram sessions with at least one `reserve_click` ÷ Total Instagram sessions × 100.
+
+**Breakdown:**
+
+-   Content type; message type; post format; campaign
+
+**Data Source:**
+
+-   Instagram Insights / Sprout Social
+
+-   GA4 via Data Studio
+
+**Notes:**
+
+-   Group posts by content and message type and compare engagement from their first seven days.
+
+-   Links need UTM tags, and reservation clicks need tracking set up.
+
+-   A shared bio link cannot show which post brought someone to the website. Reservation clicks do not confirm bookings.
 
 ## 2. KPI Tree / Metric Hierarchy
 
