@@ -38,15 +38,28 @@ editor: source
 
 ## 1. Analytics Blueprint
 
-## Client Context
+### Client Context
 
 #### Stakeholder Question 1
+
+How does moving the ‘Reserve a Table’ button to the upper left of RKR’s Collins Concierge section affect reservation clicks and bookings?
+
+- **KPIs:** Newsletter sessions; reservation click rate
+
+- **Definitions:** Newsletter sessions = GA4 sessions with source `collins_concierge_[position]` / medium `email`. Reservation click rate = `reserve_click` events ÷ newsletter sessions × 100.
+
+- **Breakdowns:** Button position, issue date, device
+
+- **Data source:** GA4 via Data Studio; Canva for issue views
+
+- **Notes:** Links must be UTM-tagged in Canva and point to an RKR page. `reserve_click` is not tracked today (see D3). First tagged issues serve as the baseline.
 
 #### Stakeholder Question 2
 
 #### Stakeholder Question 3
 
 #### Stakeholder Question 4
+
 How effectively does the RKR website encourage visitors to explore its menu and dining options?
 
 #### Stakeholder Question 5
