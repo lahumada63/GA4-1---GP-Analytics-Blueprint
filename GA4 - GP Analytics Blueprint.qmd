@@ -58,6 +58,42 @@ How does moving the ‘Reserve a Table’ button to the upper left of RKR’s Co
 
 #### Stakeholder Question 3
 
+Which Facebook content and messaging strategies are associated with stronger engagement and higher OpenTable reservation activity?
+
+**KPI's:**
+
+- Facebook Engagement Rate
+
+- Facebook Post Link Clicks
+
+- OpenTable Reservation Activity
+
+**Definitions:**
+
+- Facebook Engagement Rate: Measure the percentage of Facebook views/impressions that result in engagement
+
+- Formula: Total Engagement ÷ Views/Impressions x 100
+
+- Post Link Clicks: Number of clicks on links included in Facebook posts
+
+- OpenTable Reservation Activity: Number of reservations recorded in OpenTable during the same measurement period
+
+**Breakdown:**
+
+- Content strategy; messaging strategy; corresponding OpenTable reservation period
+
+**Data Source:**
+
+- Sprout Social/ Facebook performance data
+
+- OpenTable reservation data
+
+**Notes:**
+
+- Facebook posts will be categorized by content and messaging strategy and will be compared using engagement rate and post link clicks. The current data already provides post-level Facebook performance metrics that includes engagements and engagement rates.
+
+- OpenTable reservation activity will be compared with Facebook performance over the same time periods. If direct tracking is available, reservations may be tied to Facebook; otherwise, the analysis will focus on association rather than causation.
+
 #### Stakeholder Question 4
 
 How effectively does the RKR website encourage visitors to explore its menu and dining options?
