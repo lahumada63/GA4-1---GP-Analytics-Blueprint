@@ -56,6 +56,50 @@ How does moving the ‘Reserve a Table’ button to the upper left of RKR’s Co
 
 #### Stakeholder Question 2
 
+
+What aspects of the dining experience should RKR prioritize improving based on guest satisfaction and intention to return?
+
+**KPIs:**
+
+- Average Food Quality Rating
+- Average Service Quality Rating
+- Average Atmosphere / Physical Environment Rating
+- Overall Satisfaction Score
+- Intention-to-Return Rate
+
+**Definitions:**
+
+- Average Food Quality Rating: Mean of the four food quality items (quality, taste, freshness, and visual appeal), each rated from 1 to 5.
+
+- Average Service Quality Rating: Mean of the four service quality items (friendliness, attentiveness, professionalism, and promptness), each rated from 1 to 5.
+
+- Average Atmosphere / Physical Environment Rating: Mean of the four atmosphere items (pleasantness, cleanliness, comfort, and visual appeal), each rated from 1 to 5.
+
+- Overall Satisfaction Score: Mean response to the overall dining satisfaction question, coded from 1 (Very Dissatisfied) to 5 (Very Satisfied).
+
+- Intention-to-Return Rate: Number of respondents selecting "Likely" or "Very Likely" divided by the total number of valid responses to the intention-to-return question, multiplied by 100.
+
+**Breakdowns:**
+
+- Visit frequency
+- Recency of visit
+- Reservation experience
+- RKR discovery source
+
+**Data Source:**
+
+- Qualtrics Customer Experience Survey
+
+**Notes:**
+
+- Include only respondents who confirm they have previously dined at RKR.
+- Calculate each dimension's average using valid responses to its four survey items.
+- Open-ended guest feedback will be reviewed to identify recurring strengths and improvement opportunities.
+- Intention to return measures stated likelihood, not actual repeat reservations.
+- Survey measures are separate from GA4 tracking and will complement the team's digital marketing KPIs.
+
+
+
 #### Stakeholder Question 3
 
 Which Facebook content and messaging strategies are associated with stronger engagement and higher OpenTable reservation activity?
@@ -136,13 +180,53 @@ Which Instagram content and messages get more engagement and reservation-link cl
 
 -   A shared bio link cannot show which post brought someone to the website. Reservation clicks do not confirm bookings.
 
+
 ## 2. KPI Tree / Metric Hierarchy
 
 #### North Star Outcome
 
+**Increase Confirmed RKR Reservations**
+
+The main business goal is to increase confirmed reservations at The Restaurant at Kellogg Ranch (RKR). Confirmed reservations will be measured using OpenTable data if access is available. Until then, reservation link clicks can serve as an indicator of reservation intent rather than completed bookings.
+
 #### KPI Tree Diagram
 
+The KPI tree connects RKR's reservation goal with four performance areas: Social Media, Newsletter, Website Engagement, and Customer Experience.
+
+```{mermaid}
+flowchart TB
+
+    NS["NORTH STAR OUTCOME<br/><b>Increase Confirmed RKR Reservations</b><br/>OpenTable - Pending Data Access"]
+
+    SM["<b>01 | SOCIAL MEDIA</b><br/><br/>Facebook Engagement Rate<br/>Instagram Engagement Rate<br/>Instagram Sessions<br/>Reservation Click Rate"]
+
+    NL["<b>02 | NEWSLETTER</b><br/><br/>Newsletter Sessions<br/>Reservation Click Rate"]
+
+    WEB["<b>03 | WEBSITE ENGAGEMENT</b><br/><br/>Menu Page Views<br/>Menu Exploration Rate<br/>Reservation CTA Clicks"]
+
+    CX["<b>04 | CUSTOMER EXPERIENCE</b><br/><br/>Average Food Quality Rating<br/>Average Service Quality Rating<br/>Average Atmosphere Rating<br/>Intention-to-Return Rate"]
+
+    NS --> SM
+    NS --> NL
+    NS --> WEB
+    NS --> CX
+
+    classDef north fill:#163B32,stroke:#163B32,color:#FFFFFF,stroke-width:2px,font-size:17px;
+    classDef card fill:#F3F7F5,stroke:#8CAFA1,color:#172B25,stroke-width:1.5px,font-size:15px;
+
+    class NS north;
+    class SM,NL,WEB,CX card;
+
+    linkStyle default stroke:#779287,stroke-width:1.5px;
+```
+
 #### Diagnostic Dimensions
+
+**Digital Marketing:** Traffic channel, campaign, landing page, and device category.
+
+**Customer Experience:** Visit frequency, recency of visit, reservation experience, and awareness/discovery source.
+
+*Measurement note:* GA4 will support website traffic and reservation-click metrics when tracking is implemented. Social media engagement will be measured using platform analytics, and guest satisfaction and return intention will be measured using Qualtrics. Confirmed reservations will require OpenTable data.
 
 ## 3. Event / Parameter Map
 
