@@ -230,7 +230,33 @@ flowchart TB
 
 ## 3. Event / Parameter Map
 
-\[Insert Event / Parameter Map Here\]
+#### Instrumentation Scope
+
+This proposed plan connects the website and campaign KPIs in Parts 1–2 to GA4. It requires implementation and validation by the RKR website administrator; it does not imply that these events are already collected. The [RKR menu page](https://www.cpp.edu/rkr/menu.shtml) offers menu PDFs and expandable menu sections, while the [homepage](https://www.cpp.edu/rkr/) embeds an OpenTable reservation widget.
+
+#### Event / Parameter Map
+
+| KPI / question supported | Event name / type | Trigger definition | Required parameters | Notes / edge cases |
+|:--|:--|:--|:--|:--|
+| Menu page views; website reach (Q4) | `page_view` — standard | Page loads or supported history changes within `/rkr/`; count menu views only when the normalized path is `/rkr/menu.shtml`. | `page_location`, `page_title`, `page_referrer` | Use the existing Google tag; do not add a second page-view tag. Exclude unrelated CPP pages. A view does not prove that the menu was read. |
+| Menu exploration rate; preferred dining options (Q4) | `menu_section_open` — custom | On the menu page, a visitor opens a previously collapsed menu section by mouse, touch, or keyboard. | `menu_type`, `menu_section`, `interaction_method` | Fire on the collapsed-to-expanded state change, not every click. “Expand all” emits one event with `menu_section=all` and `interaction_method=expand_all`, rather than one per section. Ignore initial rendering and collapses. |
+| Menu exploration rate; menu PDF interest (Q4) | `file_download` — enhanced measurement | Visitor activates a menu PDF link on `/rkr/menu.shtml`. Filter to an approved list of the four menu PDF destinations. | `link_url`, `file_name`, `file_extension` | Enable file-download enhanced measurement and use its existing event. Do not add a duplicate custom download event. A click indicates intent to open/download, not successful reading or completion. |
+| Reservation CTA clicks; reservation click rate (Q1, Q4, Q5); tagged Facebook traffic (Q3) | `reserve_click` — custom | Visitor activates an RKR-controlled reservation link or button that opens OpenTable or reveals the reservation widget. | `cta_location`, `booking_provider`, `interaction_type` | One event per activation; repeated activations remain separate events. Filter to approved reservation controls. A widget impression is not a click. The parent page cannot observe clicks inside a cross-origin iframe without provider support. |
+| Confirmed reservations; North Star outcome | `generate_lead` — GA4 recommended, conditional | A verified successful reservation confirmation is received through an authorized provider integration or instrumented confirmation page. | `booking_provider`, `lead_type` | Set `lead_type=table_reservation`. Do not fire on a link click, widget load, or generic form submission. Deduplicate confirmation retries using a provider reference outside GA4; send no guest or booking identifiers. Until integration is available, report confirmed bookings from OpenTable separately. |
+
+#### Parameter and Campaign Conventions
+
+- **Custom parameters:** Use lowercase `snake_case` strings consistently. `menu_type`: `lunch`, `dinner`, `beverage`, or `wine_bottle`; `menu_section`: a stable category such as `starters_salads`, `entrees`, or `all`; `interaction_method`: `single_section` or `expand_all`; `cta_location`: an approved placement such as `header`, `homepage`, or `menu_page`; `booking_provider`: `opentable`; `interaction_type`: `outbound_link` or `widget_open`. Values are proposed categories; confirm actual controls before implementation.
+- **Reporting setup:** Register the six custom parameters above plus `lead_type` as event-scoped custom dimensions when needed in reports. Use GA4's built-in page, file, device, and session acquisition dimensions for standard fields rather than creating duplicates.
+- **Acquisition:** Tag incoming campaign links with `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`. Retain Part 1's newsletter source `collins_concierge_[position]` / medium `email`; use `instagram` or `facebook` / `organic_social` for organic social links. Store newsletter issue date in campaign and creative/placement in content. Never add UTMs to internal navigation. Device category and session source/medium are GA4 dimensions, not manually repeated event parameters.
+
+#### KPI Calculation and Collection Rules
+
+**Menu page views:** Count filtered `page_view` events. **Menu exploration rate:** RKR sessions with at least one `menu_section_open` or approved menu `file_download` ÷ all measured RKR sessions × 100. Count each session once in the numerator. **Reservation clicks:** Count `reserve_click` events. For Q1, retain the specified events-per-newsletter-session formula; for Q5, use Instagram sessions containing a `reserve_click` ÷ Instagram sessions × 100. These measures have different numerators and must be labeled separately.
+
+Respect the site's consent configuration; blocked or denied collection can reduce observed totals and must not be treated as zero activity. Sanitize URLs and link values before collection; exclude guest names, emails, phone numbers, survey answers, and reservation identifiers. Cross-domain booking attribution requires provider cooperation and compatible tagging; UTMs alone cannot confirm bookings. Qualtrics satisfaction/return-intention measures and social-platform engagement remain in their source systems, not invented GA4 events. A shared Instagram bio URL cannot identify an individual post.
+
+*Implementation references:* [Google event setup](https://developers.google.com/analytics/devguides/collection/ga4/events), [recommended events](https://developers.google.com/analytics/devguides/collection/ga4/reference/events), [event parameters](https://developers.google.com/analytics/devguides/collection/ga4/event-parameters), and [enhanced measurement](https://support.google.com/analytics/answer/9216061).
 
 ## 4. Validation Checklist and Test Cases
 
