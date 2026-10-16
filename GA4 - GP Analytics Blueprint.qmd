@@ -335,4 +335,4 @@ Respect the site's consent configuration; blocked or denied collection can reduc
 
 - [GitHub Repository](https://github.com/lahumada63/GA4-1---GP-Analytics-Blueprint.git)
 
-- GitHub Pages
+- [GitHub Pages](https://lahumada63.github.io/GA4-1---GP-Analytics-Blueprint/)
