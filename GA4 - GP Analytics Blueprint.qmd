@@ -333,6 +333,6 @@ Respect the site's consent configuration; blocked or denied collection can reduc
 
 # Appendix
 
-- GitHub Repository
+- [GitHub Repository](https://github.com/lahumada63/GA4-1---GP-Analytics-Blueprint.git)
 
 - GitHub Pages
