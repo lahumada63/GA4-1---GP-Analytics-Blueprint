@@ -142,6 +142,43 @@ Which Facebook content and messaging strategies are associated with stronger eng
 
 How effectively does the RKR website encourage visitors to explore its menu and dining options?
 
+**KPIs:**
+
+-   Menu Page Views
+-   Menu Exploration Rate
+-   Reservation CTA Clicks
+-   Website Reservation Click Rate
+
+**Definitions:**
+
+-   Menu Page Views: Number of `page_view` events for the RKR menu page, using the normalized page path `/rkr/menu.shtml`. Repeat views are included.
+
+-   Menu Exploration Rate: RKR website sessions with at least one `menu_section_open` event or approved menu PDF `file_download` event ÷ all measured RKR website sessions × 100. Count each qualifying session once, even if the visitor explores multiple sections or PDFs.
+
+-   Reservation CTA Clicks: Number of `reserve_click` events from approved RKR reservation links or buttons. Repeat activations are included.
+
+-   Website Reservation Click Rate: RKR website sessions with at least one `reserve_click` event ÷ all measured RKR website sessions × 100. Count each qualifying session once.
+
+**Breakdown:**
+
+-   Device category; session source / medium; campaign; landing page; menu type (lunch, dinner, beverage, or wine by the bottle); menu section or PDF; reservation CTA location.
+
+**Data Source:**
+
+-   GA4 website data, reported through Looker Studio or GA4 Explorations. Use page views and enhanced-measurement file downloads alongside the custom menu-section and reservation-click events specified in Part 3.
+
+**Notes:**
+
+-   Restrict reporting to RKR pages under `/rkr/` and approved menu PDF destinations; exclude unrelated CPP website activity. Use the same reporting period and session scope for each rate's numerator and denominator.
+
+-   Menu views and PDF clicks indicate interest, not proof that visitors read the menu. Reservation clicks indicate intent, not confirmed bookings or completed restaurant visits.
+
+-   Menu-section and reservation-click tracking require implementation and validation. Interactions inside the embedded OpenTable widget need provider support; a widget impression must not be counted as a reservation click.
+
+-   Report menu-section and PDF activity separately for diagnosis, but deduplicate sessions across both when calculating Menu Exploration Rate. Match menu PDF destinations to menu types using an approved lookup.
+
+-   Consent choices and blocked analytics can reduce observed activity. Compare results only after tracking is validated; use initial validated data as the baseline rather than inventing a performance target.
+
 #### Stakeholder Question 5
 
 Which Instagram content and messages get more engagement and reservation-link clicks?

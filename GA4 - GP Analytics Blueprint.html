@@ -5415,6 +5415,36 @@ z-index: 1000;
 <section id="stakeholder-question-4" class="level4" data-number="1.1.1.4">
 <h4 data-number="1.1.1.4" class="anchored" data-anchor-id="stakeholder-question-4"><span class="header-section-number">1.1.1.4</span> Stakeholder Question 4</h4>
 <p>How effectively does the RKR website encourage visitors to explore its menu and dining options?</p>
+<p><strong>KPIs:</strong></p>
+<ul>
+<li>Menu Page Views</li>
+<li>Menu Exploration Rate</li>
+<li>Reservation CTA Clicks</li>
+<li>Website Reservation Click Rate</li>
+</ul>
+<p><strong>Definitions:</strong></p>
+<ul>
+<li><p>Menu Page Views: Number of <code>page_view</code> events for the RKR menu page, using the normalized page path <code>/rkr/menu.shtml</code>. Repeat views are included.</p></li>
+<li><p>Menu Exploration Rate: RKR website sessions with at least one <code>menu_section_open</code> event or approved menu PDF <code>file_download</code> event ÷ all measured RKR website sessions × 100. Count each qualifying session once, even if the visitor explores multiple sections or PDFs.</p></li>
+<li><p>Reservation CTA Clicks: Number of <code>reserve_click</code> events from approved RKR reservation links or buttons. Repeat activations are included.</p></li>
+<li><p>Website Reservation Click Rate: RKR website sessions with at least one <code>reserve_click</code> event ÷ all measured RKR website sessions × 100. Count each qualifying session once.</p></li>
+</ul>
+<p><strong>Breakdown:</strong></p>
+<ul>
+<li>Device category; session source / medium; campaign; landing page; menu type (lunch, dinner, beverage, or wine by the bottle); menu section or PDF; reservation CTA location.</li>
+</ul>
+<p><strong>Data Source:</strong></p>
+<ul>
+<li>GA4 website data, reported through Looker Studio or GA4 Explorations. Use page views and enhanced-measurement file downloads alongside the custom menu-section and reservation-click events specified in Part 3.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><p>Restrict reporting to RKR pages under <code>/rkr/</code> and approved menu PDF destinations; exclude unrelated CPP website activity. Use the same reporting period and session scope for each rate’s numerator and denominator.</p></li>
+<li><p>Menu views and PDF clicks indicate interest, not proof that visitors read the menu. Reservation clicks indicate intent, not confirmed bookings or completed restaurant visits.</p></li>
+<li><p>Menu-section and reservation-click tracking require implementation and validation. Interactions inside the embedded OpenTable widget need provider support; a widget impression must not be counted as a reservation click.</p></li>
+<li><p>Report menu-section and PDF activity separately for diagnosis, but deduplicate sessions across both when calculating Menu Exploration Rate. Match menu PDF destinations to menu types using an approved lookup.</p></li>
+<li><p>Consent choices and blocked analytics can reduce observed activity. Compare results only after tracking is validated; use initial validated data as the baseline rather than inventing a performance target.</p></li>
+</ul>
 </section>
 <section id="stakeholder-question-5" class="level4" data-number="1.1.1.5">
 <h4 data-number="1.1.1.5" class="anchored" data-anchor-id="stakeholder-question-5"><span class="header-section-number">1.1.1.5</span> Stakeholder Question 5</h4>
