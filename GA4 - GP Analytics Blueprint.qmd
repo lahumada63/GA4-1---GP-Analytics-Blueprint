@@ -36,26 +36,35 @@ editor: source
 
 # GP Analytics Blueprint
 
-## 1. Analytics Blueprint
+## Analytics Blueprint
 
 ### Client Context
+
+The Restaurant at Kellogg Ranch (RKR) is a full-service restaurant on the Cal Poly Pomona campus, affiliated with the Collins College of Hospitality Management, that earns revenue from dining reservations through OpenTable and from private events. Its primary goal is to increase confirmed reservations by strengthening how guests find RKR through its newsletter, social media, and website, and by improving the dining experience that brings them back.
 
 #### Stakeholder Question 1
 
 How does moving the ‘Reserve a Table’ button to the upper left of RKR’s Collins Concierge section affect reservation clicks and bookings?
 
--   **KPIs:** Newsletter sessions; reservation click rate
+**KPIs:**
 
--   **Definitions:** Newsletter sessions = GA4 sessions with source `collins_concierge_[position]` / medium `email`. Reservation click rate = `reserve_click` events ÷ newsletter sessions × 100.
+- Newsletter sessions
 
--   **Breakdowns:** Button position, issue date, device
+- Reservation click rate
 
--   **Data source:** GA4 via Data Studio; Canva for issue views
+**Definitions:**
 
--   **Notes:** Links must be UTM-tagged in Canva and point to an RKR page. `reserve_click` is not tracked today (see D3). First tagged issues serve as the baseline.
+- Newsletter sessions = GA4 sessions with source `collins_concierge_[position]` / medium `email`.
+
+- Reservation click rate = `reserve_click` events ÷ newsletter sessions × 100.
+
+**Breakdowns:** Button position, issue date, device
+
+**Data source:** GA4 via Data Studio; Canva for issue views
+
+**Notes:** Links must be UTM-tagged in Canva and point to an RKR page. `reserve_click` is not tracked today (see Part 3). First tagged issues serve as the baseline.
 
 #### Stakeholder Question 2
-
 
 What aspects of the dining experience should RKR prioritize improving based on guest satisfaction and intention to return?
 
@@ -98,45 +107,43 @@ What aspects of the dining experience should RKR prioritize improving based on g
 - Intention to return measures stated likelihood, not actual repeat reservations.
 - Survey measures are separate from GA4 tracking and will complement the team's digital marketing KPIs.
 
-
-
 #### Stakeholder Question 3
 
 Which Facebook content and messaging strategies are associated with stronger engagement and higher OpenTable reservation activity?
 
 **KPI's:**
 
--   Facebook Engagement Rate
+- Facebook Engagement Rate
 
--   Facebook Post Link Clicks
+- Facebook Post Link Clicks
 
--   OpenTable Reservation Activity
+- OpenTable Reservation Activity
 
 **Definitions:**
 
--   Facebook Engagement Rate: Measure the percentage of Facebook views/impressions that result in engagement
+- Facebook Engagement Rate: Measure the percentage of Facebook views/impressions that result in engagement
 
--   Formula: Total Engagement ÷ Views/Impressions x 100
+- Formula: Total Engagement ÷ Views/Impressions x 100
 
--   Post Link Clicks: Number of clicks on links included in Facebook posts
+- Post Link Clicks: Number of clicks on links included in Facebook posts
 
--   OpenTable Reservation Activity: Number of reservations recorded in OpenTable during the same measurement period
+- OpenTable Reservation Activity: Number of reservations recorded in OpenTable during the same measurement period
 
 **Breakdown:**
 
--   Content strategy; messaging strategy; corresponding OpenTable reservation period
+- Content strategy; messaging strategy; corresponding OpenTable reservation period
 
 **Data Source:**
 
--   Sprout Social/ Facebook performance data
+- Sprout Social/ Facebook performance data
 
--   OpenTable reservation data
+- OpenTable reservation data
 
 **Notes:**
 
--   Facebook posts will be categorized by content and messaging strategy and will be compared using engagement rate and post link clicks. The current data already provides post-level Facebook performance metrics that includes engagements and engagement rates.
+- Facebook posts will be categorized by content and messaging strategy and will be compared using engagement rate and post link clicks. The current data already provides post-level Facebook performance metrics that includes engagements and engagement rates.
 
--   OpenTable reservation activity will be compared with Facebook performance over the same time periods. If direct tracking is available, reservations may be tied to Facebook; otherwise, the analysis will focus on association rather than causation.
+- OpenTable reservation activity will be compared with Facebook performance over the same time periods. If direct tracking is available, reservations may be tied to Facebook; otherwise, the analysis will focus on association rather than causation.
 
 #### Stakeholder Question 4
 
@@ -144,40 +151,40 @@ How effectively does the RKR website encourage visitors to explore its menu and 
 
 **KPIs:**
 
--   Menu Page Views
--   Menu Exploration Rate
--   Reservation CTA Clicks
--   Website Reservation Click Rate
+- Menu Page Views
+- Menu Exploration Rate
+- Reservation CTA Clicks
+- Website Reservation Click Rate
 
 **Definitions:**
 
--   Menu Page Views: Number of `page_view` events for the RKR menu page, using the normalized page path `/rkr/menu.shtml`. Repeat views are included.
+- Menu Page Views: Number of `page_view` events for the RKR menu page, using the normalized page path `/rkr/menu.shtml`. Repeat views are included.
 
--   Menu Exploration Rate: RKR website sessions with at least one `menu_section_open` event or approved menu PDF `file_download` event ÷ all measured RKR website sessions × 100. Count each qualifying session once, even if the visitor explores multiple sections or PDFs.
+- Menu Exploration Rate: RKR website sessions with at least one `menu_section_open` event or approved menu PDF `file_download` event ÷ all measured RKR website sessions × 100. Count each qualifying session once, even if the visitor explores multiple sections or PDFs.
 
--   Reservation CTA Clicks: Number of `reserve_click` events from approved RKR reservation links or buttons. Repeat activations are included.
+- Reservation CTA Clicks: Number of `reserve_click` events from approved RKR reservation links or buttons. Repeat activations are included.
 
--   Website Reservation Click Rate: RKR website sessions with at least one `reserve_click` event ÷ all measured RKR website sessions × 100. Count each qualifying session once.
+- Website Reservation Click Rate: RKR website sessions with at least one `reserve_click` event ÷ all measured RKR website sessions × 100. Count each qualifying session once.
 
 **Breakdown:**
 
--   Device category; session source / medium; campaign; landing page; menu type (lunch, dinner, beverage, or wine by the bottle); menu section or PDF; reservation CTA location.
+- Device category; session source / medium; campaign; landing page; menu type (lunch, dinner, beverage, or wine by the bottle); menu section or PDF; reservation CTA location.
 
 **Data Source:**
 
--   GA4 website data, reported through Looker Studio or GA4 Explorations. Use page views and enhanced-measurement file downloads alongside the custom menu-section and reservation-click events specified in Part 3.
+- GA4 website data, reported through Looker Studio or GA4 Explorations. Use page views and enhanced-measurement file downloads alongside the custom menu-section and reservation-click events specified in Part 3.
 
 **Notes:**
 
--   Restrict reporting to RKR pages under `/rkr/` and approved menu PDF destinations; exclude unrelated CPP website activity. Use the same reporting period and session scope for each rate's numerator and denominator.
+- Restrict reporting to RKR pages under `/rkr/` and approved menu PDF destinations; exclude unrelated CPP website activity. Use the same reporting period and session scope for each rate's numerator and denominator.
 
--   Menu views and PDF clicks indicate interest, not proof that visitors read the menu. Reservation clicks indicate intent, not confirmed bookings or completed restaurant visits.
+- Menu views and PDF clicks indicate interest, not proof that visitors read the menu. Reservation clicks indicate intent, not confirmed bookings or completed restaurant visits.
 
--   Menu-section and reservation-click tracking require implementation and validation. Interactions inside the embedded OpenTable widget need provider support; a widget impression must not be counted as a reservation click.
+- Menu-section and reservation-click tracking require implementation and validation. Interactions inside the embedded OpenTable widget need provider support; a widget impression must not be counted as a reservation click.
 
--   Report menu-section and PDF activity separately for diagnosis, but deduplicate sessions across both when calculating Menu Exploration Rate. Match menu PDF destinations to menu types using an approved lookup.
+- Report menu-section and PDF activity separately for diagnosis, but deduplicate sessions across both when calculating Menu Exploration Rate. Match menu PDF destinations to menu types using an approved lookup.
 
--   Consent choices and blocked analytics can reduce observed activity. Compare results only after tracking is validated; use initial validated data as the baseline rather than inventing a performance target.
+- Consent choices and blocked analytics can reduce observed activity. Compare results only after tracking is validated; use initial validated data as the baseline rather than inventing a performance target.
 
 #### Stakeholder Question 5
 
@@ -185,40 +192,39 @@ Which Instagram content and messages get more engagement and reservation-link cl
 
 **KPIs:**
 
--   Instagram Engagement Rate
+- Instagram Engagement Rate
 
--   Instagram Sessions
+- Instagram Sessions
 
--   Reservation Click Rate
+- Reservation Click Rate
 
 **Definitions:**
 
--   Engagement Rate: (Likes + Comments + Saves + Shares) ÷ Reach × 100 per post. Average the rates for each content category.
+- Engagement Rate: (Likes + Comments + Saves + Shares) ÷ Reach × 100 per post. Average the rates for each content category.
 
--   Instagram Sessions: GA4 sessions with source `instagram` / medium `organic_social`.
+- Instagram Sessions: GA4 sessions with source `instagram` / medium `organic_social`.
 
--   Reservation Click Rate: Instagram sessions with at least one `reserve_click` ÷ Total Instagram sessions × 100.
+- Reservation Click Rate: Instagram sessions with at least one `reserve_click` ÷ Total Instagram sessions × 100.
 
 **Breakdown:**
 
--   Content type; message type; post format; campaign
+- Content type; message type; post format; campaign
 
 **Data Source:**
 
--   Instagram Insights / Sprout Social
+- Instagram Insights / Sprout Social
 
--   GA4 via Data Studio
+- GA4 via Data Studio
 
 **Notes:**
 
--   Group posts by content and message type and compare engagement from their first seven days.
+- Group posts by content and message type and compare engagement from their first seven days.
 
--   Links need UTM tags, and reservation clicks need tracking set up.
+- Links need UTM tags, and reservation clicks need tracking set up.
 
--   A shared bio link cannot show which post brought someone to the website. Reservation clicks do not confirm bookings.
+- A shared bio link cannot show which post brought someone to the website. Reservation clicks do not confirm bookings.
 
-
-## 2. KPI Tree / Metric Hierarchy
+## KPI Tree / Metric Hierarchy
 
 #### North Star Outcome
 
@@ -265,7 +271,7 @@ flowchart TB
 
 *Measurement note:* GA4 will support website traffic and reservation-click metrics when tracking is implemented. Social media engagement will be measured using platform analytics, and guest satisfaction and return intention will be measured using Qualtrics. Confirmed reservations will require OpenTable data.
 
-## 3. Event / Parameter Map
+## Event / Parameter Map
 
 #### Instrumentation Scope
 
@@ -274,7 +280,7 @@ This proposed plan connects the website and campaign KPIs in Parts 1–2 to GA4.
 #### Event / Parameter Map
 
 | KPI / question supported | Event name / type | Trigger definition | Required parameters | Notes / edge cases |
-|:--|:--|:--|:--|:--|
+|:--------------|:--------------|:--------------|:--------------|:--------------|
 | Menu page views; website reach (Q4) | `page_view` — standard | Page loads or supported history changes within `/rkr/`; count menu views only when the normalized path is `/rkr/menu.shtml`. | `page_location`, `page_title`, `page_referrer` | Use the existing Google tag; do not add a second page-view tag. Exclude unrelated CPP pages. A view does not prove that the menu was read. |
 | Menu exploration rate; preferred dining options (Q4) | `menu_section_open` — custom | On the menu page, a visitor opens a previously collapsed menu section by mouse, touch, or keyboard. | `menu_type`, `menu_section`, `interaction_method` | Fire on the collapsed-to-expanded state change, not every click. “Expand all” emits one event with `menu_section=all` and `interaction_method=expand_all`, rather than one per section. Ignore initial rendering and collapses. |
 | Menu exploration rate; menu PDF interest (Q4) | `file_download` — enhanced measurement | Visitor activates a menu PDF link on `/rkr/menu.shtml`. Filter to an approved list of the four menu PDF destinations. | `link_url`, `file_name`, `file_extension` | Enable file-download enhanced measurement and use its existing event. Do not add a duplicate custom download event. A click indicates intent to open/download, not successful reading or completion. |
@@ -295,10 +301,38 @@ Respect the site's consent configuration; blocked or denied collection can reduc
 
 *Implementation references:* [Google event setup](https://developers.google.com/analytics/devguides/collection/ga4/events), [recommended events](https://developers.google.com/analytics/devguides/collection/ga4/reference/events), [event parameters](https://developers.google.com/analytics/devguides/collection/ga4/event-parameters), and [enhanced measurement](https://support.google.com/analytics/answer/9216061).
 
-## 4. Validation Checklist and Test Cases
+## Validation Checklist and Test Cases
 
-#### Validation Checklist
+- **GTM / collection:**
+  - In Preview mode, confirm `menu_section_open` and `reserve_click` fire once per qualifying action, only on `/rkr/` pages.
+  - Confirm there is no duplicate `page_view` from a second Google tag, and that `file_download` comes only from enhanced measurement.
+  - Triggers must ignore section collapses, initial page rendering, and OpenTable widget loads.
+  - Tags must follow the site's consent configuration.
+- **GA4 DebugView / Realtime:**
+  - Confirm each event appears with the exact name in Part 3: `page_view`, `menu_section_open`, `file_download`, `reserve_click`, and `generate_lead` once integrated.
+  - Required parameters must show approved lowercase `snake_case` values, with no blanks or "(not set)".
+  - No guest names, emails, phone numbers, or reservation identifiers may appear in any parameter or URL.
+- **Reporting sanity:**
+  - Confirm UTM-tagged newsletter, Instagram, and Facebook visits appear under the correct session source / medium rather than Direct or Referral.
+  - Page path, landing page, and device category must populate, and menu views must filter correctly to `/rkr/menu.shtml`.
+  - Registered custom dimensions should show values within 24 to 48 hours.
+- **BigQuery export (if enabled):**
+  - Confirm test events appear in the `events_*` table for the test date, custom parameters extract correctly from `event_params`, and test UTMs appear in the traffic source fields.
+  - Event counts must match GA4 reports for the same date range.
 
 #### Test Cases
 
-\[Insert six test cases here\]
+| \# | KPI / question supported | Steps | Expected events | Expected parameters / dimensions |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| 1 | Newsletter sessions; reservation click rate (Q1) | On a phone, open a test newsletter link tagged `utm_source=collins_concierge_upperleft&utm_medium=email&utm_campaign=2026-10-20&utm_content=reserve_button`. Click "Reserve a Table" on the landing page. | `page_view`, `reserve_click` | Source / medium = `collins_concierge_upperleft` / `email`; campaign = `2026-10-20`; `cta_location=homepage`; `booking_provider=opentable`; `interaction_type=outbound_link`; device = mobile |
+| 2 | Menu page views (Q4) | On desktop, go from the RKR homepage to the menu page through site navigation. | `page_view` | `page_location` ends in `/rkr/menu.shtml`; `page_title` = Our Menu; `page_referrer` = homepage URL; device = desktop |
+| 3 | Menu exploration rate (Q4) | On the menu page, open the dinner entrees section, close it, then select "Expand all." | `menu_section_open` (two total; none on collapse) | Event 1: `menu_type=dinner`, `menu_section=entrees`, `interaction_method=single_section`. Event 2: `menu_type=dinner`, `menu_section=all`, `interaction_method=expand_all` |
+| 4 | Menu exploration rate; menu PDF interest (Q4) | On the menu page, click the lunch menu PDF link. | `file_download` (one only) | `link_url` = approved PDF destination; `file_name` = lunch menu file; `file_extension=pdf` |
+| 5 | Instagram sessions; reservation click rate (Q5) | Open the site from a link tagged `utm_source=instagram&utm_medium=organic_social`. Click the header reservation button twice. | `page_view`, `reserve_click` (two events, one session) | Source / medium = `instagram` / `organic_social`; `cta_location=header`; `booking_provider=opentable`; `interaction_type=outbound_link`; session counts once in the Q5 click rate |
+| 6 | Widget edge case; tagged Facebook traffic (Q3) | Open the homepage from a link tagged `utm_source=facebook&utm_medium=organic_social`. Let the OpenTable widget load without clicking, then click the control that opens the widget. | `page_view` on load (no `reserve_click`); `reserve_click` only after the click | Source / medium = `facebook` / `organic_social`; `cta_location=homepage`; `booking_provider=opentable`; `interaction_type=widget_open` |
+
+# Appendix
+
+- GitHub Repository
+
+- GitHub Pages
